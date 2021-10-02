@@ -1,9 +1,6 @@
-docker build -t kdsofts/multi-client:latest -t kdsofts/multi-client:$SHA -f ./client/Dockerfile ./client
-docker build -t kdsofts/multi-server:latest -t  kdsofts/multi-server:$SHA -f ./server/Dockerfile ./server
-docker build -t kdsofts/multi-worker:latest -t  kdsofts/multi-worker:$SHA -f ./worker/Dockerfile ./worker
-docker push kdsofts/multi-client:latest
-docker push kdsofts/multi-server:latest
-docker push kdsofts/multi-worker:latest
+docker build -t  kdsofts/multi-client:$SHA -f ./client/Dockerfile ./client
+docker build -t  kdsofts/multi-server:$SHA -f ./server/Dockerfile ./server
+docker build -t  kdsofts/multi-worker:$SHA -f ./worker/Dockerfile ./worker
 docker push kdsofts/multi-client:$SHA
 docker push kdsofts/multi-server:$SHA
 docker push kdsofts/multi-worker:$SHA
