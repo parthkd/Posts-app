@@ -15,9 +15,9 @@ before_install:
   - gcloud config set compute/zone us-central1-c
   - gcloud container clusters get-credentials cluster-1
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker build -t kdsofts/Posts-app -f ./client/Dockerfile.dev ./client
+  - docker build -t kdsofts/posts-app -f ./client/Dockerfile.dev ./client
 script:
-  - docker run parthkd/Posts-app npm test -- --coverage
+  - docker run kdsofts/posts-app npm test -- --coverage
 deploy:
   provider: script
   script: bash ./deploy.sh
